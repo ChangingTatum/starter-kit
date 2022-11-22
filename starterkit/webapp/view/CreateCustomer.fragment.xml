@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" controller="stk.starterkit.controller.CustomersList">
+    <Dialog id="CreateCustomer" title="CreateCustomer">
+        <Label id="inputTextLabel1" text="Customer ID" labelFor="inputText1" />
+			<Input
+				id="inputText1"
+				placeholder="Enter Customer ID"
+				maxLength="10"/>
+         <Label id="inputTextLabel2" text="Customer Name" labelFor="inputText2" />
+			<Input
+				id="inputText2"
+				placeholder="Enter Customer Name"
+				maxLength="10"/>
+       
+            <Button
+				text="Add Customer"
+				press="onAddCustomer"/>
+			<Button
+				text="Close"
+				press="onCloseDialog"/>
+		
+    </Dialog>
+</core:FragmentDefinition>
+

@@ -1,0 +1,45 @@
+<mvc:View  xmlns:mvc="sap.ui.core.mvc" controllerName="stk.starterkit.controller.CustomersList" displayBlock="true" xmlns="sap.m">
+    <Shell id="shell2" >
+    <Page xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" id="CustomersList"
+        showNavButton="true" navButtonPress=".onNavBack" title="CompanyName">
+        <content>
+            <Carousel id="carousel1" height="80%" width="60%" class="pinkBackground" >
+                <pages>
+                    <Image id="img1" width="60%" height="60%" src="https://dlagentlemana.pl/environment/cache/images/500_500_productGfx_12651/Pan-Drwal-pomada-do-wlosow-butter-pomade-120-ml.jpg"/>
+                    <Image id="img2" width="60%" height="60%" src="https://dlagentlemana.pl/environment/cache/images/500_500_productGfx_5be7f46d6f69f41d8bbd8de4ded85ee5.jpg"/>
+                    <Image id="img3" width="60%" height="60%" src="https://dlagentlemana.pl/userdata/public/gfx/f781450c75b7fa517bab730c9703fa7b.jpg"/>
+                </pages>
+
+                <customLayout>
+                    <CarouselLayout id="carlayout1" visiblePagesCount="2">
+                    </CarouselLayout>
+                </customLayout>
+            </Carousel> 
+        </content>
+            <HBox>
+				<Button text="Add new Customer" press="onAddPress2" class="sapUiMediumMarginBegin sapUiTinyMarginTopBottom pinkBackground">
+                </Button>
+                <Button text="Performance" press="onPerformancePress" class="sapUiMediumMarginBegin sapUiTinyMarginTopBottom ">
+				</Button>
+            </HBox>
+            <Table id="table1" items="{/Customers}" class="blueText" >
+                <columns>
+                    <Column id="col1">
+                        <Label id="lab1" text="{i18n>companyName}" />
+                    </Column>
+                    <Column id="col2">
+                        <Label id="lab2" text="{i18n>country}"/>
+                    </Column>
+                </columns>
+                <items >
+                    <ColumnListItem id="collist1" type="Navigation" press="onCustomerPress">
+                        <Text id="collist1_text" text="{CompanyName}"/>
+                        <Text id="collist2_text" text="{Country}"/>
+                        
+                    </ColumnListItem>
+                </items>
+
+            </Table>
+    </Page>
+    </Shell>
+</mvc:View>

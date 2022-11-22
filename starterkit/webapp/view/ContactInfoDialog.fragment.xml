@@ -1,0 +1,39 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" controller="stk.starterkit.controller.CustomerDetails">
+    <Dialog id="contactDialog" title="ContactDetails">
+		<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleForm1"
+			editable="false"
+			layout="ResponsiveGridLayout"
+			title="Address"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="Name" />
+				<Text id="nameText" text="{ContactName}" />
+				<Label text="Contact Title" />
+				<Text id="contactTitle" text="{ContactTitle}" />
+				<Label text="Address" />
+				<Text id="address" text="{Address}" />
+				<Label text="Phone" />
+				<Text id="phone" text="{Phone}" />
+			</f:content>
+		</f:SimpleForm>
+	</VBox>
+        <beginButton>
+			<Button
+				text="Close"
+				press="onCloseDialog"/>
+		</beginButton>
+    </Dialog>
+</core:FragmentDefinition>

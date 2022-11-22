@@ -1,0 +1,8 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"  displayBlock="true">
+    <Page xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" id="CreateCustomer" showNavButton="true" navButtonPress="handleNavButtonPress" title="CreateCustomer">
+        <content>
+        
+    
+        </content>
+    </Page>
+</mvc:View>

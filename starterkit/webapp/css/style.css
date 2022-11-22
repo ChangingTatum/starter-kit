@@ -1,0 +1,10 @@
+/* Enter your custom styles here */
+
+.pinkBackground {
+	background: pink;
+	
+}
+
+.blueText tr:hover span {
+    color:#00f !important;
+}

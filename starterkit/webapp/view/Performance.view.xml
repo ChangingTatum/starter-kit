@@ -1,0 +1,33 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="stk.starterkit.controller.Performance" displayBlock="true">
+    <Page xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" id="Performance" showNavButton="true" navButtonPress="onNavBack" title="Performance">
+    <content>
+        <Table id="table2" items="{/Employees}" class="blueText" >
+                <columns>
+                    <Column id="col1">
+                        <Label id="lab1" text="Name" />
+                    </Column>
+                    <Column id="col2">
+                        <Label id="lab2" text="Position"/>
+                    </Column>
+                    <Column id="cole">
+                        <Label id="lab3" text="Actions"/>
+                    </Column>
+                </columns>
+                <items >
+                    <ColumnListItem id="collist1" type="Navigation" >
+                        <Text id="collist1_text" text="{FirstName} {LastName}"/>
+                        <Text id="collist2_text" text="{Title}"/>
+                            <FlexBox id="flexbox1">
+                                <Button text="Motivate" press="onMotivatePress">
+                                </Button>
+                                <Button text="Fire" press="onFirePress">
+				                </Button>
+                            </FlexBox>
+                        
+                    </ColumnListItem>
+                </items>
+
+            </Table>
+    </content>
+    </Page>
+</mvc:View>
