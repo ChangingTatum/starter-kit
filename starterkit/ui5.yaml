@@ -21,7 +21,7 @@ server:
             destination: Northwind
           - path: /generate_insult.php
             url: https://evilinsult.com
-            destination: evilinsult
+            destination: evilinsult_x
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:

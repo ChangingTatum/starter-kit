@@ -17,7 +17,7 @@
             </Carousel> 
         </content>
             <HBox>
-				<Button text="Add new Customer" press="onAddPress2" class="sapUiMediumMarginBegin sapUiTinyMarginTopBottom pinkBackground">
+				<Button text="{i18n>AddNewCustomer}" press="onAddPress2" class="sapUiMediumMarginBegin sapUiTinyMarginTopBottom pinkBackground">
                 </Button>
                 <Button text="Performance" press="onPerformancePress" class="sapUiMediumMarginBegin sapUiTinyMarginTopBottom ">
 				</Button>

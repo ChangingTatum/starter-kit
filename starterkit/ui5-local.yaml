@@ -35,7 +35,7 @@ server:
             destination: Northwind
           - path: /generate_insult.php
             url: https://evilinsult.com
-            destination: evilinsult
+            destination: evilinsult_x
     - name: sap-fe-mockserver
       beforeMiddleware: csp
       configuration:

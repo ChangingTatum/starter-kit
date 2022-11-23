@@ -1,0 +1,94 @@
+_schema-version: "3.2"
+ID: stk-starterkit
+description: A Fiori application.
+version: 0.0.1
+modules:
+- name: stk-starterkit-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: stk-starterkit-destination-service
+    parameters:
+      content-target: true
+  - name: stk-starterkit-repo-host
+    parameters:
+      service-key:
+        name: stk-starterkit-repo-host-key
+  - name: stk-starterkit-uaa
+    parameters:
+      service-key:
+        name: stk-starterkit-uaa-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: stk-starterkit_html_repo_host
+          ServiceInstanceName: stk-starterkit-html5-srv
+          ServiceKeyName: stk-starterkit-repo-host-key
+          sap.cloud.service: stk-starterkit
+        - Authentication: OAuth2UserTokenExchange
+          Name: stk-starterkit_uaa
+          ServiceInstanceName: stk-starterkit-xsuaa-srv
+          ServiceKeyName: stk-starterkit-uaa-key
+          sap.cloud.service: stk-starterkit
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+- name: stk-starterkit-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: stk-starterkit-repo-host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - stkstarterkit.zip
+      name: stkstarterkit
+      target-path: resources/
+- name: stkstarterkit
+  type: html5
+  path: .
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: stk-starterkit-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-name: stk-starterkit-destination-service
+    service-plan: lite
+- name: stk-starterkit-uaa
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: stk-starterkit-xsuaa-srv
+    service-plan: application
+- name: stk-starterkit-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: stk-starterkit-html5-srv
+    service-plan: app-host
+parameters:
+  deploy_mode: html5-repo
+  enable-parallel-deployments: true

@@ -21,11 +21,13 @@ sap.ui.define([
 	opaTest("Should navigate to create new customer", function (Given, When, Then) {
 		// Arrangements
 		Given.iStartMyApp();
-		Given.onTheCustomersList.iPressCreate
+		Given.onTheCustomersList.iPressCreate();
 
 		// Assertions
 		Then.onTheCustomersList.iShouldSeeThePage();
 		//Cleanup
 		Then.iTeardownMyApp();
 	});
+	
+	
 });

@@ -22,9 +22,8 @@
       "internalConsoleOptions": "openOnSessionStart",
       "outputCapture": "std",
       "env": {
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/starterkit\"}",
-        "FIORI_TOOLS_BACKEND_CONFIG": "[{\"path\":\"/V2\",\"url\":\"https://services.odata.org\"}]",
-        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/starterkit\"}"
       }
     },
     {
@@ -102,9 +101,8 @@
       "internalConsoleOptions": "openOnSessionStart",
       "outputCapture": "std",
       "env": {
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/starterkit\"}",
-        "FIORI_TOOLS_BACKEND_CONFIG": "[{\"path\":\"/V2\",\"url\":\"https://services.odata.org\",\"destination\":\"Northwind\"},{\"path\":\"/generate_insult.php\",\"url\":\"https://evilinsult.com\",\"destination\":\"evilinsult\"}]",
-        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/starterkit\"}"
       }
     }
   ]

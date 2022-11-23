@@ -12,12 +12,17 @@ sap.ui.define([
                     return this.waitFor({
                         controlType: "sap.m.Button",
                         matchers: new sap.ui.test.matchers.I18NText({
-                            key: "Add new Customer",
+                            key: "AddNewCustomer",
                             modelName: "i18n",
                             propertyName: "text"
                         }),
                         viewName: sViewName,
                         actions: new Press(),
+                        success: function (aButton) {
+                            Opa5.assert.ok(true, "The corousel is displayed");
+                            var oButton = aButton[0];
+                            oButton.firePress();
+                        },
                         errorMessage: "Did not find the button"
                     });
                 }
@@ -40,7 +45,7 @@ sap.ui.define([
                     return this.waitFor({
                         controlType: "sap.m.Table",
                         viewName: sViewName,
-                        success: function () {
+                        success: function (oTable) {
                             Opa5.assert.ok(true, "The table is displayed");
                             var iItemsCount = oTable[0].getItems().length;
                             Opa5.assert.notStrictEqual(iItemsCount, 0, "Table has items: " + iItemsCount);
@@ -53,7 +58,7 @@ sap.ui.define([
                     return this.waitFor({
                         controlType: "sap.m.Button",
                         matchers: new sap.ui.test.matchers.I18NText({
-                            key: "Add new Customer",
+                            key: "AddNewCustomer",
                             modelName: "i18n",
                             propertyName: "text"
                         }),
@@ -68,8 +73,12 @@ sap.ui.define([
 
                 iShouldSeeThePage: function () {
 					return this.waitFor({
-						id: "CreateCustomer",
-						viewName: "CreateCustomer",
+                        id:"inputTextLabel1",
+                        viewName: sViewName,
+                        searchOpenDialogs: true,
+                    
+						//id: "CreateCustomer",
+						//fragmentName: "CreateCustomer",
 						success: function () {
 							Opa5.assert.ok(true, "The CreateCustomer fragment is displayed");
 						},

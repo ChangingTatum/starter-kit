@@ -22,6 +22,7 @@ sap.ui.define([
                 sap.m.URLHelper.triggerEmail(sEmail, sSubject, sBody);
             },
             onFirePress: function (oEvent) {
+                var oEmployee = oEvent.getSource().getBindingContext().getObject();
                 $.ajax({
                     url:"generate_insult.php",
                     data: {
@@ -29,7 +30,10 @@ sap.ui.define([
                         type: "json"
                     },
                     success: function (oResponse) {
-                        var sBody = JSON.parse(oResponse).insult;
+                        var sBody = oResponse.insult;
+                        var sSubject = "You are the worst!";
+                       
+                        var sEmail = oEmployee.FirstName + "." + oEmployee.LastName + "@<your_domain_name_goes_here>.com";
                         sap.m.URLHelper.triggerEmail(sEmail, sSubject, sBody);
                     }
                 })
